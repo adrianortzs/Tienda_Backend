@@ -1,0 +1,12 @@
+include ./htmlHead.pug
+        include ./navBar.pug
+        main
+            h1 TIENDA DE ROPA
+            section(class="products") 
+                each product in products
+                    div(class="product")
+                        img(src=`${product.image}` alt=`${product.name}`)
+                        section(class="important-info")
+                            h3 #{product.name}
+                            p #{product.price}€
+                        a(href=`/products/${product._id}`) Ver detalle

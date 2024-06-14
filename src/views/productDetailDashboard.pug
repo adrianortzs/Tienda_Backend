@@ -1,0 +1,20 @@
+include ./htmlHead.pug
+        include ./navBarDashboard.pug
+        main
+            div(class="product-detail") 
+                img(src=`${product.image}` alt=`${product.name}` class="img-detail")
+                section(class="product-info")
+                    h1 #{product.name}
+                    span #{product.price}€
+                section(class="product-info")
+                    p #{product.description}
+                section(class="product-info")
+                    p #{product.size}
+                section(class="product-info")
+                    form(action='/dashboard' method="POST")
+                        input(type="hidden" name="_method" value="DELETE")
+                        button(type="submit" id="delete") Eliminar
+                section(class="product-info")
+                    form(action=`/dashboard/${product._id}/edit` method="GET") 
+                        button(type="submit" id="edit") Editar
+                a(href="/dashboard") Volver atrás

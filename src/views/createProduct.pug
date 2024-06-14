@@ -1,0 +1,27 @@
+include ./htmlHead.pug
+        include ./navBarDashboard.pug
+        main
+            h1 AÑADIR PRODUCTO
+            form(action="/dashboard" method="POST")
+                label(for="name") Nombre:
+                input(type="text" id="name" name="name")
+                label(for="description") Descripción:
+                input(type="textarea" id="description" name="description")
+                label(for="image") Imagen:
+                input(type="text" id="image" name="image")
+                label(for="category") Categoría:
+                select(id="category" name="category")
+                    option(value="camisetas") Camisetas
+                    option(value="pantalones") Pantalones
+                    option(value="sudaderas") Sudaderas
+                    option(value="abrigos") Abrigos
+                label(for="size") Talla:
+                select(id="size" name="size")
+                    option(value="XS") XS
+                    option(value="S") S
+                    option(value="M") M
+                    option(value="L") L
+                    option(value="XL") XL
+                label(for="price") Precio:
+                input(type="number" id="price" name="price")
+                button(type="submit" id="add") Añadir

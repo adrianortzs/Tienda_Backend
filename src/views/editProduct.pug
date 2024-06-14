@@ -1,0 +1,28 @@
+include ./htmlHead.pug
+        include ./navBarDashboard.pug
+        main
+            h1 ACTUALIZAR PRODUCTO
+            form(action="/dashboard" method="POST")
+                input(type="hidden" name="_method" value="PUT")
+                label(for="name") Nombre:
+                input(type="text" id="name" name="name" value="product.name")
+                label(for="description") Descripción:
+                input(type="textarea" id="description" name="description" value="product.description")
+                label(for="image") Imagen:
+                input(type="text" id="image" name="image" value="product.image")
+                label(for="category") Categoría:
+                select(id="category" name="category")
+                    option(value="camisetas" selected=(product.category === "camisetas")) Camisetas
+                    option(value="pantalones" selected=(product.category === "pantalones")) Pantalones
+                    option(value="sudaderas" selected=(product.category === "sudaderas")) Sudaderas
+                    option(value="abrigos" selected=(product.category === "abrigos")) Abrigos
+                label(for="size") Talla:
+                select(id="size" name="size")
+                    option(value="XS" selected=(product.size === "XS")) XS
+                    option(value="S" selected=(product.size === "S")) S
+                    option(value="M" selected=(product.size === "M")) M
+                    option(value="L" selected=(product.size === "L")) L
+                    option(value="XL" selected=(product.size === "XL")) XL
+                label(for="price") Precio:
+                input(type="number" id="price" name="price" value="product.price")
+                button(type="submit" id="update") Actualizar

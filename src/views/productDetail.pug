@@ -1,0 +1,13 @@
+include ./htmlHead.pug 
+        include ./navBar.pug
+        main
+            div(class="product-detail") 
+                img(src=`${product.image}` alt=`${product.name}` class="img-detail")
+                section(class="product-info")
+                    h1 #{product.name}
+                    span #{product.price}€
+                section(class="product-info")
+                    p #{product.description}
+                section(class="product-info")
+                    p #{product.size}
+                a(href="/products") Volver atrás
